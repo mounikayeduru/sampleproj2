@@ -1,0 +1,231 @@
+<html>
+<head>
+    <title>sample</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+h1 {text-align: center;}
+</style>
+    </head>
+<body>
+                          <h1>INTRODUCTION</h1>
+    <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;The current explosion of data and information, mainly caused by the extensive use
+of the Internet and its related technologies, e-commerce and e-business, has increased
+the urgent need for the development of techniques for intelligent data analysis. Data
+mining, which concerns the discovery and extraction of knowledge chunks from large
+data repositories, is aimed at addressing this need.
+    </p>
+    <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;However, there are a number of factors that militate against the widespread adoption
+and use of this existing new technology in business. First, individual data mining tools
+frequently fail to discover large portions of the knowledge embedded in large data
+repositories. This is mainly due to the choice of statistical measures used by the
+individual tools. A number of data mining researchers and practitioners are, therefore,
+currently investigating systems that combine two or more diverse data mining tools. In
+particular, the combination of techniques that share their individual knowledge with one
+another is being investigated, leading to the fusion of information representing different
+        viewpoints.</p>
+    <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;Second, the results of many data mining techniques are often difficult to understand. For example, a data mining effort concerning the evaluation of a census data
+repository produced 270 pages of rules (Pretorius, 2001). The visual representation of
+the knowledge embedded in such rules will help to heighten the comprehensibility of the
+results. The visualization of the data itself, as well as the data mining process, should
+go a long way towards increasing the user’s understanding of and faith in the data mining
+process. That is, data and information visualization provides users with the ability to
+obtain new insights into the knowledge, as discovered from large repositories. Human
+beings look for novel features, patterns, trends, outliers and relationships in data (Han
+& Kamber, 2001). Through visualizing the data and the concept descriptions obtained
+(e.g., in the form of rules), a qualitative overview of large and complex data sets can be
+obtained. In addition, data and rule visualization can assist in identifying regions of
+interest and appropriate parameters for more focused quantitative analysis (Thearling,
+Becker, DeCoste, Mawby, Pilote & Sommerfield,2002). The user can thus get a “rough
+feeling” of the quality of the data, in terms of its correctness, adequacy, completeness,
+relevance, etc. The use of data and rule visualization thus greatly expands the range of
+models that can be understood by the user, thereby easing the so-called “accuracy
+        versus understandability” tradeoff (Thearling et al., 1998).</p>
+   <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp; Visual data mining is currently an active area of research. Examples of related
+commercial data mining packagesinclude the DBMiner data mining system, See5 which
+forms part of the RuleQuest suite of data mining tools, Clementine developed by Integral
+Solutions Ltd (ISL), Enterprise Miner developed by SAS Institute, Intelligent Miner as
+produced by IBM, and various other tools (Han & Kamber, 2001). Neural network tools
+such as NeuroSolutions and SNNS and Bayesian network tools such as Hugin, TETRAD,
+and Bayesware Discoverer, also incorporate extensive visualization facilities. Examples
+of related research projects and visualization approaches include MLC++, WEKA,
+AlgorithmMatrix, C4.5/See5 and CN2, amongst others (Clark & Niblett, 1989; Fayyad,
+Grinstein, & Wierse, 2001; Han & Kamber, 2001; Mitchell, 1997; Quinlan, 1994) Interested
+readers are referred to Fayyad, Grinstein, & Wierse (2001), which provides a detailed
+       discussion of the current state of the art.</p>
+    <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;This paper describes the ViziMine data mining tool used to visualize the cooperative
+data mining process. The aim of the ViziMine tool is twofold: First, the knowledge, as
+discovered by the individual tools, is visualized throughout the data mining process and
+presented in the form of comprehensible rules; this aspect includes visualization of the
+results of data mining as well as the cooperative learning process. Second, the data are
+visualized prior to and during cooperative data mining. In this way, the quality of the data
+can be assessed throughout the knowledge discovery process, which includes data
+preprocessing, data mining, and reporting. During data mining, the visualization of data
+as covered by individual rules shows the portion of the data covered. The visual data
+mining process is interactive in that humans are able to adapt the results and data during
+mining. In addition, this chapter shows how virtual reality can be used to visualize the
+        data and its descriptors.</p>
+    <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;The chapter is organized as follows: The next section introduces the cooperative
+inductive learning team (CILT) data mining system in which two or more data mining tools
+co-exist. An overview of current trends in visual data mining follows. The next section
+discusses the ViziMine system, which incorporates visual data mining components into
+the CILT system. Then we introduce the use of three-dimensional visualization, virtual
+reality-based visualization and multimedia data mining, which may be used to visualize
+the data used for data mining. Conclusions are presented in the last section of the
+        chapter</p>
+    <h1>COOPERATIVE DATA MINING</h1>
+    <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;Data mining concerns the automated discovery of hidden patterns and relationships that may not always be obvious. A number of data mining tools exist, including
+decision trees, rule induction programs and neural networks (Han & Kamber, 2001). Each
+of these tools applies a specific algorithm to the data in order to build a model based on
+        the statistically significant relationships found in the data.</p>
+    <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;A number of data mining practitioners have found that, when supplied with the same
+data repository, different data mining tools produce diverse results. This fact is due to
+the so-called inductive bias that each algorithm uses when constructing the model
+(Mitchell, 1997). That is, each data mining tool uses a different learning style (based on
+one of a variety of different statistical measures) and criteria when building its model. The
+purpose of combining the results of diverse data mining tools, through the fusion thereof,
+is to produce high quality results. Therefore, the development of a hybrid multi-strategy
+learning system that incorporates more than one learning style is currently an active area
+of research (Honavar, 1995; Lin & Hendler, 1995; Sun, 1995). In this multi-strategy
+        learning approach, the strengths of each technique are amplified, and the weaknesses
+are ameliorated.</p>
+    <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;In the CILT system, two or more diverse data mining techniques are combined into
+a multi-strategy learning system (Viktor, 1999). The system currently includes three
+different data mining tools with different knowledge representations. The C4.5 tool
+constructs a decision tree using the information gain ratio criteria (Quinlan, 1994). This
+tree is pruned to produce a set of rules. The CN2 method induces rules from examples
+using the Laplace error estimate (Clark & Niblett, 1989). Third, the ANNSER learner creates rules from a trained neural network (Viktor, Engelbrecht, & Cloete, 1998). In
+addition, the rules of the domain expert are included through a personal assistant (PA)
+learner, which contains a knowledge base constructed after interviews with one or more
+domain experts (Viktor, 1999). That is, the user plays an active role in the data mining
+process, and is able to make and implement decisions that will affect its outcome (Hinke
+    & Newman, 2001).</p>
+    <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;In the CILT system, the individual results are fused into one through a three-phase
+        process, as follows (Viktor, 1999; Viktor, le Roux, & Paquet, 2001):</p>
+    <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;Phase 1: Individual learning. First, each individual data mining tool (or learner) uses a
+training set to form an initial representation of the problem at hand. In addition, the
+results of the user, a domain expert, are modeled as part of the system (Viktor, 1999).
+Each individual component’s knowledge is stored in a separate knowledge base,
+        in the form of disjunctive normal form (DNF) rules.</p>
+   <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp; Phase 2: Cooperative learning. During phase 2, the individual data mining tools share
+their knowledge with one another. A rule accuracy threshold is used to distinguish
+between low- and high-quality rules. Cooperative learning proceeds in four steps
+       as follows (Viktor, le Roux, & Paquet, 2001):</p>
+   <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp; 1) each data mining tool queries the knowledge bases of the others to obtain the
+high-quality rules that it may have missed. These rules are compared with the
+rules contained in its rule set. In this way, a NewRule list of relevant rules is
+       produced.</p>
+    <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;2) the NewRule list is compiled by identifying the following relationships
+between the rules, where R1 denotes a high-quality rule contained in the
+tool’s rule set and R2 denotes a high-quality rule created by another data
+mining tool.</p>
+    <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp; Similarities. Two rules, R1 and R2, are similar if two conditions hold:
+the training examples covered by rule R1 are a subset of those covered
+by R2; andthe rules contain the same attributes with similar values. For
+example, the attribute-value test (petal-width > 49.0) is similar to the test
+(petal-width >49.5). If R1 and R2 are similar, it implies that the learner
+has already acquired the knowledge as contained in rule R2 and that R2
+should not be added to the NewRule list.</p>
+    <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;Overlapping rules. Two rules overlap when they contain one or more
+attribute-value tests that are the same. For example, rule Rl with
+attribute-value tests (petal-length > 7.5) and (petal-width < 47.5) and
+rule R2 with attribute-value tests (petal-length > 7.5) and (sepal-length
+< 35.5) overlap. Rule R2 is placed on the tool’s NewRule list. Note that,
+for the example, a new rule R3 with form (petal-length > 7.5) and petalwidth < 47.5) and (sepal-length < 35.5)} may be formed. This rule
+represents a specialization that will usually be less accurate than the
+original general rules and will cover fewer cases. Such a specialization
+should be avoided, since it leads to overfitting.</p>
+    <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;Subsumption. A rule R2 subsumes another Rl if and only if they
+describe the same concept and the attribute-value tests of R2 form a
+subset of that of rule Rl. In other words, rule R2 is more general than
+R1. If R2 subsumes rule Rl, it is placed on the NewRule list.</p>
+    <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;3) the rule combination procedure is executed. Here, the rules as contained in
+the NewRule list are used to form new rules, as follows. The attribute-value
+tests of the rules as contained in the NewRule list are combined with the
+attribute-value tests of the rules in the tools rule set to form a new set of rules.
+Each of these new rules is evaluated against the test set. The new high-quality
+rules, which are dissimilar to, do not overlap with, and are not subsumed by
+existing rules, are retained on the NewRule list. These rules act as input to the
+data generation step</p>
+    <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;4) the data generator uses each of the rules in the NewRule list to generate a new
+set of training instances. The newly generated training instances are added
+to the original training set, and the learner reiterates the individual learning
+phase. In this way, a new training set that is biased towards the particular rule
+is generated. This process is constrained by ensuring that distribution of the
+data as contained in the original training set is maintained. Interested readers
+are referred to Viktor (1999) for a detailed description of this process.</p>
+    <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;Steps 1 to 4 are reiterated until no new rules can be generated. Lastly, redundant
+rules are pruned using a reduced error pruning algorithm.</p>
+    <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;Phase 3: Knowledge fusion. Finally, the resulting knowledge, as contained in the
+individual knowledge bases, is fused into one. Again, redundant rules are pruned
+and a fused knowledge base that reflects the results of multi-strategy learning is
+created.</p>
+    <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;Note that a detailed description of the cooperative learning approach falls beyond
+the scope of this paper. Interested readers are referred to Viktor (1999) for a description
+thereof. This chapter concerns the visual representation of the cooperative data mining
+process and results, as well as the data itself, using visual data mining techniques, as
+discussed next.</p>
+        <h1>VISUAL DATA MINING</h1>
+    <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;Data mining techniques, as discussed above, construct a model of the data through
+repetitive calculation to find statistically significant relationships within the data.
+However, the human visual perception system can detect patterns within the data that
+are unknown to a data mining tool (Johnson-Laird, 1993). The combination of the various
+strengths of the human visual system and data mining tools may subsequently lead to
+the discovery of novel insights and the improvement of the human’s perspective of the
+problem at hand.</p>
+        
+        <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;Data mining extracts information from a data repository of which the user may be
+unaware. Useful relationships between variables that are non-intuitive are the jewels that
+data mining hopes to locate. The aim of visual data mining techniques is thus to discover
+and extract implicit, useful knowledge from large data sets using data and/or knowledge
+visualization techniques. Visual data mining harnesses the power of the human vision
+system, making it an effective tool to comprehend data distribution, patterns, clusters,
+and outliers in data (Han & Kamber, 2001)</p>
+        <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;Visual data mining integrates data visualization and data mining and is thus closely
+related to computer graphics, multimedia systems, human computer interfaces, pattern
+recognition, and high performance computing. Since there are usually many ways to
+graphically represent a model, the type of visualizations used should be chosen to
+maximize their value to the user (Johnson-Laird, 1993). This requirement implies that we
+understand the user’s needs and design the visualization with the end user in mind.</p>
+        <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;Note that, in order to ensure the success of visualization, the visual data mining
+process should be interactive. In interactive visual data mining, visualization tools can
+be used to help users make smart data mining decisions (Docherty & Beck, 2001; Han &
+Kamber, 2001). Here, the data distribution in a set of attributes is displayed using color
+sectors or columns, giving the user the ability to visually understand the data and
+therefore allowing him or her to be interactively part of the mining process. In the CILT
+environment, the user participates (through the PA learner) in the cooperative process
+and is therefore able to validate the knowledge, as well as add his personal knowledge
+to the process.</p>
+        <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;The following observation is noteworthy. Visual data mining concerns both
+visualizing the data, and visualizing the results of data mining and the data mining
+process itself. In a cooperative data mining environment, as introduced in the last
+section, result visualization includes the interactive visualization of the results of
+multiple data mining techniques and the cooperation processes. Data visualization is
+important not only during data mining, but also during data preprocessing, as discussed
+next</p>
+        <h2>Data Visualization During Data Preprocessing</h2>
+        <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;Data preprocessing is one of the most important aspects of any data mining exercise.
+According to Adriaans and Zantinge (1996), data preprocessing consumes 80% of the
+time of a typical, real-world data mining effort. Here, the “garbage-in, garbage-out” rule
+applies. According to a survey conducted by Redman (1996), a typical operational data
+repository contains 1% to 5% incorrect values. It follows that the poor quality of data
+may lead to nonsensical data mining results, which will subsequently have to be
+discarded. In addition, the implicit assumption that the data do in fact relate to the case
+study from which they were drawn and thus reflect the real world is often not tested (Pyle,
+1999).</p>
+        <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;Figure 1 shows the different components of the knowledge discovery process,
+which includes the selection of appropriate tools, the interpretation of the results, and
+the actual data mining itself. Data preprocessing concerns the selection, evaluation,
+cleaning, enrichment, and transformation of the data (Adriaans & Zantinge, 1996; Han
+& Kamber, 2001; Pyle, 1999). Data preprocessing involves the following aspects:</p>
+        <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;Data cleaning is used to ensure that the data are of a high quality and contain no
+duplicate values. If the data set is large, random samples are obtained and analyzed.
+The data-cleaning process involves the detection and possible elimination of
+incorrect and missing values. Such values may have one of a number of causes.
+These causes include data capturing errors due to missing information, deliberate
+typing errors, and negligence. Moreover, end users may fraudulently supply
+misleading information.</p>
+    
+    </body>
+</html>
